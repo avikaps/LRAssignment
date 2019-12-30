@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Results for </h1> {{data.question}}
+	<ul>
+	{% for e in votes %}
+	  <li>{{ e }} - got {{ votes[e] }} votes </li>
+	{% endfor %}
+	</ul>
+{% endblock %}

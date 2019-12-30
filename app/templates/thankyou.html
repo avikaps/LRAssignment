@@ -1,0 +1,24 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Voting App</title>
+      {% else %}
+      <title>Welcome to Voting App</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Voting App :
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+	</div>
+    {% block content %}
+    <h1>Hi,{{ current_user.username }}!</h1>
+    <h1>Thank you for submitting your vote</h1>
+{% endblock %}
+    </body>
+</html>
+
+
